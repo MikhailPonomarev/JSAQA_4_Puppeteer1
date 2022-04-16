@@ -1,12 +1,15 @@
 let page;
 
+beforeEach(async() => {
+  page = await browser.newPage();
+});
+
 afterEach(() => {
   page.close();
 });
 
 describe("Github page tests", () => {
   beforeEach(async () => {
-    page = await browser.newPage();
     await page.goto("https://github.com/team");
  });
 
@@ -38,7 +41,6 @@ describe("Github page tests", () => {
 
 describe("Github start page tests", () => {
   beforeEach(async () => {
-    page = await browser.newPage();
     await page.goto("https://github.com/");
  });
 
